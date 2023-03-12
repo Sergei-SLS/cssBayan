@@ -1,5 +1,61 @@
 body {
-    font-family: Impact;
-    line-height: 1.2;
-    background-color:#00ffff;
+  font-family: Impact;
+  line-height: 1.2;
+  background-color:#00ffff;
 }
+summary {
+    list-style: none;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  /* min-height: 100vh; */
+}
+
+.accordion {
+  max-width: 1920px;
+  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.5);
+}
+
+.details {
+  background-color:#a9a9a9;
+  color: #fff;
+  /* border-bottom: 1px solid transparent; */
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  font-size: 30px;
+  background-color: #000;
+  cursor: pointer;
+  border-bottom: 1px solid #fff;
+  padding: 10px 40px 10px 20px;
+  transition: 0.5s all;
+  position: relative;
+}
+
+.title:hover {
+  background-color: #555;
+}
+
+.title:before {
+  display: block;
+  content: "ᐁ";
+  font-size: 15px;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.5s all;
+  }
+
+.details[open] .title:before {
+  transform: translateY(-50%) rotate(180deg);
+}
+.text {
+  padding: 10px;
+  }
