@@ -1,0 +1,93 @@
+body {
+  font-family: Impact;
+  line-height: 1.2;
+  background-color:#00ffff;
+}
+
+.container {
+  max-width: 30%;
+  margin: auto;
+  box-shadow: 0 0 5rem 1rem rgba(0, 0, 0, 0.5);
+}
+
+.img {
+  cursor: pointer;
+  transition: width 0.5s;
+  width: 0%;
+}
+
+.icon {
+  visibility: hidden;
+  background: url("./img/arrow-down-solid.svg");
+  background-size: cover;
+  width: 2.3vh;
+  height: 3vh;
+}
+
+.input:checked + .title .icon {
+  transform: rotate(180deg);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 3.8vh;
+  cursor: pointer;
+  padding: 5% 10%;
+  transition: 0.5s all;
+  color: #000;
+}
+
+.input {
+  width: 0;
+  height: 0;
+  appearance: none;
+}
+
+.input:checked ~ .title {
+  background-color: #a9a9a9;;
+}
+
+.input:checked ~ .content .img {
+  width: 100%;
+}
+
+@media (hover:hover) {
+  .accordion:hover .img {
+    width: 100%;
+  }
+
+  .container:hover .icon {
+    visibility: visible;
+  }
+  
+  .accordion:hover .icon {
+    transform: rotate(180deg);
+  }
+
+  .title:hover{
+    background-color: #555;
+    color: #00ffff;
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .title {
+   font-size: 3.4vh;
+  }
+  
+  .container {
+    max-width: 70%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .title {
+    font-size: 3vh;
+   }
+   
+   .container {
+     max-width: 90%;
+   }
+}
